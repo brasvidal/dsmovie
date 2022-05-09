@@ -1,9 +1,23 @@
 import React from 'react';
+import 'App.css'
+import { ReactComponent as GitHubIcon } from './assets/img/github.svg'
 
 
 function App() {
   return (
-    <h1>Pagina Principal</h1>
+    <header>
+      <nav className="container">
+        <div className="dsmovie-nav-content">
+          <h1>DSMovie</h1>
+          <a href="https://github.com/brasvidal" rel='nooppener noreferrer'  >
+            <div className="dsmovie-contact-container">
+              <GitHubIcon />
+              <p className="dsmovie-contact-link">/brasvidal</p>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </header >
   );
 }
 
