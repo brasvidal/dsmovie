@@ -1,6 +1,5 @@
-import React from 'react';
-import './Navbar.css';
-import { ReactComponent as GitHubIcon } from '../assets/img/github.svg'
+import './styles.css';
+import { ReactComponent as GitHubIcon } from 'assets/img/github.svg'
 
 
 function Navbar() {
