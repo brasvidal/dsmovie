@@ -27,3 +27,9 @@ header {
     margin: 0 0 0 10px;
     font-size: 12px;
 }
+
+.dsmovie-contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
