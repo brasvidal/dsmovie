@@ -21,6 +21,7 @@ header {
 .dsmovie-contact-container {
     display: flex;
     align-items: center;
+    padding-left: 1em;
 }
 
 .dsmovie-contact-link {
@@ -28,8 +29,9 @@ header {
     font-size: 12px;
 }
 
-.dsmovie-contact-container {
+.dsmovie-social-container {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
