@@ -1,7 +1,5 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
+
 import MovieScore from "components/MovieScore";
-import { css, jsx } from '@emotion/react'
 import { Link } from "react-router-dom";
 
 
@@ -14,9 +12,7 @@ function MovieCard() {
         score: 4.5
     };
     return (
-        <div css={css`
-      
-        `} >
+        <div className="dsmovie-card-holder">
             <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
             <div className="dsmovie-card-bottom-container">
                 <h3>{movie.title}</h3>
