@@ -3,15 +3,49 @@ import { ReactComponent as StarHalf } from 'assets/img/star-half.svg';
 import { ReactComponent as StarHollow } from 'assets/img/star-hollow.svg';
 import './styles.css'
 
+type Props = {
+    score: number;
+}
+type StarProps = {
+    fill: number;
+}
+function getFills(score: number) {
 
-function MovieStars() {
+    const fills = [0, 0, 0, 0, 0];
+
+    const integerPart = Math.floor(score);
+
+    for (let i = 0; i < integerPart; i++) {
+        fills[i] = 1;
+    }
+
+    const diff = score - integerPart;
+    if (diff > 0) {
+        fills[integerPart] = 0.5;
+    }
+
+    return fills;
+}
+
+function Star({ fill }: StarProps) {
+    if (fill === 0) {
+        return <StarHollow />;
+    } else if (fill === 1) {
+        return <StarFull />
+    }
+    else return <StarHalf />
+};
+
+function MovieStars({ score }: Props) {
+
+    const fills = getFills(score);
     return (
         <div className="dsmovie-stars-container">
-            <StarFull />
-            <StarFull />
-            <StarFull />
-            <StarHalf />
-            <StarHollow />
+            <Star fill={fills[0]} />
+            <Star fill={fills[1]} />
+            <Star fill={fills[2]} />
+            <Star fill={fills[3]} />
+            <Star fill={fills[4]} />
         </div>
     )
 }
