@@ -1,9 +1,17 @@
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from 'utils/requests';
 import './styles.css';
 
 
 
 function Form() {
+
+    axios.get(`${BASE_URL}/movies?size=10?sorted=true`)
+        .then(response => {
+            console.log(response.data);
+        })
+
 
     const movie = {
         id: 1,
