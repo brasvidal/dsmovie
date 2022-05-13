@@ -22,7 +22,7 @@ function Listing() {
     });
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies?size=10?page=${pageNumber}`)
+        axios.get(`${BASE_URL}/movies?size=10&page=${pageNumber}`)
             .then(response => {
                 const data = response.data as MoviePage;
                 setPage(data);
@@ -30,9 +30,14 @@ function Listing() {
             });
     }, [pageNumber])
 
+    const handlePageChange = (newPageNumber: number) => {
+        setPageNumber(newPageNumber);
+
+    }
+
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlePageChange} />
             <div className="container">
 
                 <div className="row">
@@ -47,13 +52,10 @@ function Listing() {
 
 
                 </div>
+                <Pagination page={page} onChange={handlePageChange} />
             </div>
 
         </>
     );
 }
 export default Listing;
-
-function useEffecteEffect(arg0: () => void) {
-    throw new Error('Function not implemented.');
-}
