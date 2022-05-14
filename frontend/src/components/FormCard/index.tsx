@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Movie } from 'types/movie';
-import { BASE_URL } from 'utils/requests';
+import { BACKEND_URL } from 'utils/requests';
 import { validateEmail } from 'utils/validate';
 import './styles.css';
 
@@ -15,7 +15,7 @@ function FormCard({ movieId }: Props) {
     const [movie, setMovie] = useState<Movie>();
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/${movieId}`)
+        axios.get(`${BACKEND_URL}/movies/${movieId}`)
             .then(response => {
                 setMovie(response.data);
             });
@@ -33,7 +33,7 @@ function FormCard({ movieId }: Props) {
         }
 
         const config: AxiosRequestConfig = {
-            baseURL: BASE_URL,
+            baseURL: BACKEND_URL,
             method: 'PUT',
             url: '/scores',
             data: {
