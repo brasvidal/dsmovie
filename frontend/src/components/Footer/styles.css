@@ -6,5 +6,11 @@
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: blueviolet;
+    background-color: #6e0d77;
+    color: azure;
+}
+
+.footer.text {
+    display: flex;
+    align-items: baseline;
 }
