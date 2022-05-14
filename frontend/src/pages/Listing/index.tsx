@@ -3,7 +3,7 @@ import MovieCard from 'components/MovieCard';
 import Pagination from 'components/Pagination';
 import { useEffect, useState } from 'react';
 import { MoviePage } from 'types/movie';
-import { BASE_URL } from 'utils/requests';
+import { BACKEND_URL } from 'utils/requests';
 import './styles.css';
 
 function Listing() {
@@ -22,7 +22,7 @@ function Listing() {
     });
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies?size=10&page=${pageNumber}`)
+        axios.get(`${BACKEND_URL}/movies?size=10&page=${pageNumber}`)
             .then(response => {
                 const data = response.data as MoviePage;
                 setPage(data);
