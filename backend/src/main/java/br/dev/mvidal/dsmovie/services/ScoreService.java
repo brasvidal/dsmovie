@@ -55,6 +55,7 @@ public class ScoreService {
 		movie.setScore(avg);
 		movie.setCount(movie.getScores().size());
 		
+		//Save Changes
 		movie = movieRepository.save(movie);
 		
 		

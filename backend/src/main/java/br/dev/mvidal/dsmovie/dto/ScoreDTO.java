@@ -6,7 +6,6 @@ public class ScoreDTO {
 	private Double score;
 	
 	public ScoreDTO() {
-		
 	}
 
 	public Long getMovieId() {

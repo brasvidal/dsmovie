@@ -81,6 +81,4 @@ public class Movie {
 		return scores;
 	}
 
-	
-
 }

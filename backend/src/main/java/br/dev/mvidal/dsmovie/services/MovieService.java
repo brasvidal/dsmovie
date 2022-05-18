@@ -15,7 +15,7 @@ public class MovieService {
 	@Autowired
 	private MovieRepository repository;
 	
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = true) //controle de transação somente leitura
 	public Page<MovieDTO> findAll(Pageable pageable){
 		Page<Movie> result = repository.findAll(pageable);
 		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
